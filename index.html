@@ -1,0 +1,174 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+  <title>mows</title>
+</head>
+<style>
+  legend{
+    background-color: blue;
+    color: white;
+  }
+
+  form{
+    background-color: #8080ff;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+    border: 5px solid white;
+  }
+
+  body{
+ background-color:  #000066;
+  }
+
+  button{
+    background-color: #4d4dff;
+  }
+
+  table{
+    color:black;
+  }
+
+  .ad{
+    font-size: 18px;
+  }
+
+  .jumbotron{
+    background-color: #b3b3ff;
+  }
+
+  th{
+    color:black;
+  }
+
+  #table{
+    font-size: 32px;
+    font-family: Georgia;
+  }
+</style>
+
+<body>
+
+  <div class="jumbotron text-center">
+    <h1>MQTT over Web Socket</h1>
+  </div>
+  <br><br><br><br>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 div1">
+        <form id="form1">
+          <div class="form-group">
+            <fieldset>
+              <legend>Broker:</legend>
+              <span class='ad'>Address:</span>
+              <br>
+              <!-- wss://test.mosquitto.org:8081/mqtt -->
+              <input value='wss://test.mosquitto.org:8081/mqtt' class="form-control" id='address' type="text">
+              <br>
+              <button class=' btn btn-primary' id="btn-connect">Connect</button>
+              <button class=' btn btn-primary' id="btn-disconnect">Disconnect</button>
+              <br>
+              <span class='ad'>Status:</span>
+              <div id='Stat'>
+                  Disconnected
+              </div>
+              <br>
+            </fieldset>
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-4 div2">
+        <form class="form-group" id="form2">
+          <div class="form-group">
+            <fieldset>
+              <legend>Publish:</legend>
+              <span class='ad'>Topic:</span>
+              <br>
+              <input class="form-control" id='Topic' name='topic' type="text">
+              <br>
+              <span class='ad'>Payload:</span>
+              <br>
+              <input class="form-control" id='Payload' name='payload' type='text'>
+              <br>
+              <center><button class=' btn btn-primary' id="btn-publish">Publish</button></center>
+
+            </fieldset>
+          </div>
+        </form>
+        <br>
+
+
+      </div>
+      <div class="col-sm-4 div3">
+        <form id="form3">
+          <div class="form-group">
+            <fieldset>
+              <legend>Subscribe:</legend>
+              <span class='ad'>Topic:</span>
+              <br>
+              <input id='sub' class="form-control" type="text">
+              <br>
+              <button class=' btn btn-primary' id="btn-Subscribe">Subscribe</button>
+              <button class=' btn btn-primary' id="btn-Unsubscribe">Unsubscribe</button>
+              <br><br>
+            </fieldset>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+      Open Table
+    </button></center>
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog  modal-lg">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <center><h4 id ='table'class="modal-title">Table</h4></center>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+
+          <table class="table table-hover table-bordered">
+            <thead>
+
+              <tr class="success">
+                <th>Topic</th>
+                <th>Message</th>
+                <th>TimeSpan</th>
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+<script src="./scripts/browser-mqtt.js"></script>
+<script src="./scripts/controller.js"></script>
+
+</html>

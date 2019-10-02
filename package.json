@@ -1,0 +1,29 @@
+{
+  "name": "mqtt-node-express-lorlysugal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LloryGlaus422/mqtt-node-express-lorlysugal.git"
+  },
+  "keywords": [
+    "node",
+    "express"
+  ],
+  "author": "Lorly Sugal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LloryGlaus422/mqtt-node-express-lorlysugal/issues"
+  },
+  "homepage": "https://github.com/LloryGlaus422/mqtt-node-express-lorlysugal#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "engines": {
+    "node": "10.16"
+}
+}
