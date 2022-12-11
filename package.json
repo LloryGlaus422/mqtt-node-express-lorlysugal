@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/LloryGlaus422/mqtt-node-express-lorlysugal#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   },
   "engines": {
     "node": "10.16"
